@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:twitter_clone/components/register_button.dart';
 import 'package:twitter_clone/components/text_link.dart';
@@ -9,6 +7,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final bool isDarkThemed = false;
+
     return Column(
       children: [
         Image.asset("assets/images/twitter.png", width: 20),
@@ -42,10 +43,15 @@ class HomePage extends StatelessWidget {
         RegisterButton(
           "assets/images/google.png",
           buttonText: "Continue with Google",
+          isDarkThemed: false,
         ),
 
-        SizedBox(height: 20),
-        RegisterButton("", buttonText: "Create account"),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Divider(),
+        ),
+
+        RegisterButton("", buttonText: "Create account", isDarkThemed: true,),
 
         SizedBox(height: 10),
 
