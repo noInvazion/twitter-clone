@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:twitter_clone/login.dart';
+import 'package:twitter_clone/pages/login.dart';
 
 class TextLink extends StatelessWidget {
   const TextLink({super.key, required this.linkText, required this.isNewPage});
