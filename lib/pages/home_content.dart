@@ -37,6 +37,7 @@ class HomeContent extends StatelessWidget {
           "assets/images/google.png",
           buttonText: "Continue with Google",
           isDarkThemed: false,
+          buttonSize: 350,
         ),
 
         Padding(
@@ -44,7 +45,7 @@ class HomeContent extends StatelessWidget {
           child: Divider(),
         ),
 
-        RegisterButton("", buttonText: "Create account", isDarkThemed: true,),
+        RegisterButton("", buttonText: "Create account", isDarkThemed: true, buttonSize: 350, ),
 
         SizedBox(height: 10),
 

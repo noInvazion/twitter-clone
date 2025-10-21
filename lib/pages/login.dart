@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
+  // final TextEditingController userDetails;
+
   @override
   Widget build(BuildContext context) {
-    // final String userDetails;
+
     return Scaffold(
       backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
       body: SafeArea(
@@ -36,7 +38,7 @@ class LoginPage extends StatelessWidget {
                         borderRadius: BorderRadius.all(Radius.circular(8)),
                       ),
                       hintText: "Phone, email address, or username",
-                      hintStyle: TextStyle(color: Colors.blueGrey, fontSize: 14),
+                      hintStyle: TextStyle(color: const Color.fromARGB(255, 72, 79, 86), fontSize: 14),
                     ),
                   ),
                 ),
@@ -44,8 +46,6 @@ class LoginPage extends StatelessWidget {
                 SizedBox(height: 550),
             
                 Divider(height: 1, color: Colors.grey),
-
-
 
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -61,10 +61,7 @@ class LoginPage extends StatelessWidget {
                         child: Text("Forgot password?"),
                       ),
 
-                      
-
                       Row(
-                        // mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           OutlinedButton(
                             onPressed: (){},
