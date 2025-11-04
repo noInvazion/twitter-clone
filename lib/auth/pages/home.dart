@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:twitter_clone/pages/home_content.dart';
+import 'package:twitter_clone/auth/pages/home_content.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

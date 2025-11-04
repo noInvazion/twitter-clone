@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:twitter_clone/pages/login.dart';
+import 'package:twitter_clone/auth/pages/login.dart';
 
 class TextLink extends StatelessWidget {
   const TextLink({super.key, required this.linkText, required this.isNewPage});
@@ -23,22 +23,19 @@ class TextLink extends StatelessWidget {
             },
             child: Text(
               linkText,
-              style: TextStyle(
-                fontSize: 12,
+              style: Theme.of(context).textTheme.labelSmall!.copyWith(
                 color: Colors.blue,
-                fontWeight: FontWeight.w400,
-              ),
             ),
-          )
+          ),
+        )
         : GestureDetector(
             onTap: () {},
             child: Text(
               linkText,
-              style: TextStyle(
-                fontSize: 12,
-                color: Colors.blue,
-                fontWeight: FontWeight.w400,
+              style: Theme.of(context).textTheme.labelSmall!.copyWith(
+                color: Colors.blue
               ),
+
             ),
           );
   }

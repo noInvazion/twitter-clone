@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 
 class TextBox extends StatelessWidget {
-  const TextBox({super.key, required this.hintText});
+  const TextBox({
+    super.key, 
+    required this.hintText, 
+    required this.controller,
+    required this.keyboardType, 
+  });
 
   final String hintText;
-  // final TextInputType? keyboardType;
+  final TextEditingController controller;
+  final TextInputType? keyboardType;
 
 
   @override
@@ -12,7 +18,7 @@ class TextBox extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20) ,
       child: TextField(
-        // controller: _userInfo;
+        controller: controller,
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderSide: BorderSide(
@@ -32,7 +38,7 @@ class TextBox extends StatelessWidget {
             color: Colors.blueGrey,
           )
         ),
-        keyboardType: TextInputType.twitter, // keyboard type...
+        keyboardType: keyboardType,
       
       ),
     );
