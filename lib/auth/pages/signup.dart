@@ -8,6 +8,21 @@ class Signup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
     final TextEditingController _nameController = TextEditingController();
     final TextEditingController _emailController = TextEditingController();
     final TextEditingController _dobController = TextEditingController();
@@ -58,16 +73,31 @@ class Signup extends StatelessWidget {
                 hintText: "Name",
                 controller: _nameController,
                 keyboardType: TextInputType.name,
+                onTap: () {},
               ),
               TextBox(
                 hintText: "Email",
                 controller: _emailController,
                 keyboardType: TextInputType.emailAddress,
-              ), 
+                onTap: () {},
+              ),
               TextBox(
                 hintText: "Date of birth",
                 controller: _dobController,
                 keyboardType: TextInputType.none,
+                onTap: () async {
+                  DateTime? pickedDate = await showDatePicker(
+                    context: context,
+                    initialDate: DateTime.now(),
+                    firstDate: DateTime(1900), 
+                    lastDate: DateTime.now(), 
+                  );
+                  if (pickedDate != null) {
+                    String formattedDate =
+                        "${pickedDate.day} ${months[pickedDate.month]} ${pickedDate.year}";
+                    _dobController.text = formattedDate;
+                  }
+                },
               ),
 
               Spacer(),

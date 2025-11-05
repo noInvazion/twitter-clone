@@ -5,12 +5,14 @@ class TextBox extends StatelessWidget {
     super.key, 
     required this.hintText, 
     required this.controller,
-    required this.keyboardType, 
+    required this.keyboardType,
+    required this.onTap, 
   });
 
   final String hintText;
   final TextEditingController controller;
   final TextInputType? keyboardType;
+  final VoidCallback onTap;
 
 
   @override
@@ -39,6 +41,7 @@ class TextBox extends StatelessWidget {
           )
         ),
         keyboardType: keyboardType,
+        onTap: onTap,
       
       ),
     );
