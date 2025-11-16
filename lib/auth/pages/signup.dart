@@ -1,11 +1,18 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:twitter_clone/auth/components/register_button.dart';
 import 'package:twitter_clone/auth/components/return_button.dart';
 import 'package:twitter_clone/auth/components/text_box.dart';
+import 'package:twitter_clone/layouts/pages/home_page.dart';
 
-class Signup extends StatelessWidget {
+class Signup extends StatefulWidget {
   const Signup({super.key});
 
+  @override
+  State<Signup> createState() => _SignupState();
+}
+
+class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     List<String> months = [
@@ -26,9 +33,28 @@ class Signup extends StatelessWidget {
     final TextEditingController _nameController = TextEditingController();
     final TextEditingController _emailController = TextEditingController();
     final TextEditingController _dobController = TextEditingController();
+    final TextEditingController _passwordController = TextEditingController();
 
-    void signup() {
-      // Signup logic here
+    @override
+    void dispose() {
+      super.dispose();
+      _nameController.dispose();
+      _emailController.dispose();
+      _dobController.dispose();
+      _passwordController.dispose();
+    }
+
+    void signup() async {
+      String name = _nameController.text.trim();
+      String email = _emailController.text.trim();
+      String dob = _dobController.text.trim();
+      String password = _passwordController.text.trim();
+
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: email, 
+        password: password);
+        Navigator.push(context, 
+        MaterialPageRoute(builder: (context) => Home()));
     }
 
     return Scaffold(
@@ -73,18 +99,21 @@ class Signup extends StatelessWidget {
                 hintText: "Name",
                 controller: _nameController,
                 keyboardType: TextInputType.name,
+                isObscured: false,
                 onTap: () {},
               ),
               TextBox(
                 hintText: "Email",
                 controller: _emailController,
                 keyboardType: TextInputType.emailAddress,
+                isObscured: false,
                 onTap: () {},
               ),
               TextBox(
                 hintText: "Date of birth",
                 controller: _dobController,
                 keyboardType: TextInputType.none,
+                isObscured: false,
                 onTap: () async {
                   DateTime? pickedDate = await showDatePicker(
                     context: context,
@@ -99,6 +128,13 @@ class Signup extends StatelessWidget {
                   }
                 },
               ),
+
+              TextBox(
+                controller: _passwordController,
+                hintText: "Password",
+                keyboardType: TextInputType.visiblePassword,
+                onTap: () {}, 
+                isObscured: true,),
 
               Spacer(),
 

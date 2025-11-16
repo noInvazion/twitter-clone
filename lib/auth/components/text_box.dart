@@ -6,13 +6,15 @@ class TextBox extends StatelessWidget {
     required this.hintText, 
     required this.controller,
     required this.keyboardType,
-    required this.onTap, 
+    required this.onTap,
+    required this.isObscured,
   });
 
   final String hintText;
   final TextEditingController controller;
   final TextInputType? keyboardType;
   final VoidCallback onTap;
+  final bool isObscured;
 
 
   @override
