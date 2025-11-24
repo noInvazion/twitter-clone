@@ -64,6 +64,14 @@ flutter:
   assets:
     - assets/images/google.png
     - assets/images/twitter.png
+    - assets/images/home/email.png
+    - assets/images/home/followers.png
+    - assets/images/home/home.png
+    - assets/images/home/magnifying-glass.png
+    - assets/images/home/notification-bell.png
+    - assets/images/home/setting.png
+    - assets/images/home/profile_pictures/cat-pfp.jpg
+    
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

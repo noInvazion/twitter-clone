@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:twitter_clone/auth/components/register_button.dart';
 import 'package:twitter_clone/auth/components/return_button.dart';
 import 'package:twitter_clone/auth/components/text_box.dart';
-import 'package:twitter_clone/layouts/pages/home_page.dart';
+import 'package:twitter_clone/home/pages/home_page.dart';
 
 class Signup extends StatefulWidget {
   const Signup({super.key});
